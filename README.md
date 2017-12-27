@@ -1,3 +1,3 @@
 # Recommendation System
 
-This recommendation system.
+This recommendation system uses Content Based System and Collaborative Filtering System. 
