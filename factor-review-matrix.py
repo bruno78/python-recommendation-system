@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 import matrix_factorization_utilities as mfu
 
+import os
+import webbrowser
+
 # Load user ratings
 raw_dataset_df = pd.read_csv("data/movie_ratings_data_set.csv")
 
@@ -27,3 +30,14 @@ predicted_ratings_df = pd.DataFrame(index=ratings_df.index,
                                     data=predicted_ratings)
 
 predicted_ratings_df.to_csv("data/predicted_ratings.csv")
+
+# Create a webpage view of the data for easy visualization
+html = predicted_ratings_df.to_html(na_rep="")
+
+# Save the html to a temporary file
+with open("views/factor_review_matrix.html", "w") as f:
+    f.write(html)
+
+# Open the web page in the browser
+full_filename = os.path.abspath("factor_review_matrix.html")
+webbrowser.open("file://{}".format(full_filename))
