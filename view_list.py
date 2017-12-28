@@ -10,7 +10,7 @@ data_table = pd.read_csv('data/movies.csv', index_col="movie_id" )
 html = data_table.to_html()
 
 # Save the html to a temporary file
-with open("movie_list.html", "w") as f:
+with open("views/movie_list.html", "w") as f:
     f.write(html)
 
 # Open the webpage in the webbrowser
