@@ -13,8 +13,8 @@ ratings_df = pd.pivot_table(df, index='user_id', columns='movie_id', aggfunc=np.
 
 # Apply matrix factorization to find the latent features
 U, M = mfu.low_rank_matrix_factorization(ratings_df.as_matrix(),
-                                                                    num_features=15,
-                                                                    regularization_amount=1.0)
+                                        num_features=15,
+                                        regularization_amount=1.0)
 
 # Swap the rows and columns of product_features just so it's easier to work with
 M = np.transpose(M)
