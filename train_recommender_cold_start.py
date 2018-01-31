@@ -23,5 +23,5 @@ predicted_ratings = predicted_ratings + means
 # Save features and predicted ratings to files for later use
 pickle.dump(U, open("dat_files/user_features.dat", "wb"))
 pickle.dump(M, open("dat_files/product_features.dat", "wb"))
-pickle.dump(predicted_ratings, open("predicted_ratings.dat", "wb"))
-pickle.dump(means, open("means.dat", "wb"))
+pickle.dump(predicted_ratings, open("dat_files/predicted_ratings.dat", "wb"))
+pickle.dump(means, open("dat_files/means.dat", "wb"))
